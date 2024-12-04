@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать Книгу - Вкусные Книги</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Google Fonts - Caveat -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-3">
+        <nav class="navbar navbar-expand-lg justify-content-center">
+            <div class="navbar-nav align-items-center">
+                <a class="nav-item">
+                    <img src="logo_317x317.png" class="mx-5 img-fluid logo">
+                </a>
+				<a class="nav-item brand-name mx-5" href="index.html">Вкусные Книги</a>
+				<a class="nav-item nav-link mx-5" href="index.html">Главная</a>
+				<a class="nav-item nav-link mx-5" href="books.html">Каталог</a>
+				<a class="nav-item nav-link mx-5" href="order.html">Заказать книгу</a>
+			</div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Заказать Книгу</h1>
+        <form id="orderForm">
+            <div class="form-group">
+                <!-- Name -->
+                <label for="name">Имя</label>
+                <input type="text" class="form-control" id="name" placeholder="Введите ваше имя" required>
+            </div>
+            <!-- Book -->
+            <div class="form-group">
+                <label for="books">Выбор книг</label>
+                <div class="row" id="books">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Название книги 1</h5>
+                                <p class="card-text">Описание книги 1.</p>
+                                <input type="checkbox" class="form-check-input" value="book1" id="book1">
+                                <label class="form-check-label" for="book1">Выбрать</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Название книги 2</h5>
+                                <p class="card-text">Описание книги 2.</p>
+                                <input type="checkbox" class="form-check-input" value="book2" id="book2">
+                                <label class="form-check-label" for="book2">Выбрать</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Название книги 3</h5>
+                                <p class="card-text">Описание книги 3.</p>
+                                <input type="checkbox" class="form-check-input" value="book3" id="book3">
+                                <label class="form-check-label" for="book3">Выбрать</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Добавьте другие книги по мере необходимости -->
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Почта</label>
+                <input type="email" class="form-control" id="email" placeholder="Введите вашу почту" required>
+            </div>
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Введите ваш телефон" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="newsletter">
+                <label class="form-check-label" for="newsletter">Хочу получать новости на почту</label>
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Отправить</button>
+        </form>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">Результат</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-md-4">
+                    <h4>Подпишитесь на нас в соцсетях!</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Яндекс Дзен</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Навигация по сайту</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="books.html">Каталог</a></li>
+                        <li><a href="order.html">Заказать книгу</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Контакты</h4>
+                    <ul class="list-unstyled">
+                        <li>Шляпников Георгий, 3 курс, ФМИАТ, ПРИ-О 22/1</li>
+                        <li>Email: georg29387878@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 4 JS dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
